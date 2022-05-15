@@ -17,12 +17,28 @@ export const skillReducer = (
 ) => {
   switch(action.type) {
     case actionTypes.initial: {
+      return {
+        languageList: [],
+        requestState: requestStates.initial
+      }
     }
     case actionTypes.fetch: {
+      return {
+        ...state,
+        requestState: requestStates.loading
+      }
     }
     case actionTypes.success: {
+      return {
+        languageList: action.payload.languageList,
+        requestState: requestStates.success
+      }
     }
     case actionTypes.error: {
+      return {
+        languageList: [],
+        requestState: requestStates.error
+      }
     }
     default: {
       throw new Error();
