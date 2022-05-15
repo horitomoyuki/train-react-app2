@@ -52,7 +52,7 @@ export const Skills = () => {
           {
             state.requestState === requestStates.success && (
               state.languageList.map((item, index) => (
-                <div key={index}>
+                <div className="skill-item" key={index}>
                   <p className="description"><strong>{item.language}</strong></p>
                   <Circle
                     animate
